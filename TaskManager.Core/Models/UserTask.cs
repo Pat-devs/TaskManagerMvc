@@ -21,6 +21,6 @@ public class UserTask : IUserTask
     public DateTime DueDate { get; set; }
     public void MarkAsCompleted()
     {
-        throw new NotImplementedException();
+        IsCompleted = true;
     }
 }
