@@ -11,7 +11,7 @@ public class TaskContext : ITaskContext
         DateTime dueDate)
 
     {
-        var task = UserTask(
+        var task = new UserTask(
             ++_nextId,
             title,
             description,
@@ -30,7 +30,7 @@ public class TaskContext : ITaskContext
     {
         return _tasks.FirstOrDefault(task => task.Id == id);
     }
-    public bool CompleteTaskint (int id)
+    public bool CompleteTask (int id)
     {
         var task = GetTaskById(id);
         if (task is null)

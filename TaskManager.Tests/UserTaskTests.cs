@@ -40,4 +40,15 @@ public class UserTaskTests
         // Assert
         Assert.True(task.IsCompleted);
     }
+    [Fact]
+    public void Constructor_Throws_WhenTitleIsEmpty()
+    {
+        Assert.Throws<ArgumentException>(() => 
+            new UserTask(
+                1, 
+                "", 
+                "Beskrivelse",
+                new DateTime(2030,1,1)
+            ));
+    }
 }

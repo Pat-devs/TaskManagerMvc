@@ -8,6 +8,14 @@ public class UserTask : IUserTask
         string description,
         DateTime dueDate)
     {
+        if (string.IsNullOrWhiteSpace(title))
+        {
+            throw new ArgumentException(
+                "En oppgave må ha en tittel.",
+                nameof(title)
+            );
+        }
+
         Id = id;
         Title = title;
         Description = description;
